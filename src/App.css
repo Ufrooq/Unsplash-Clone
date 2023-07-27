@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  padding-top: 50px;
+  height: auto;
   min-height: 100vh;
+  background: #1f283d;
+  background: -webkit-linear-gradient(to top, #0b0f17, #1f283d);
+  background: linear-gradient(to top, #0b0f17, #1f283d);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#search-bar {
+  display: flex;
+  align-items: center;
+  padding: 5px 17px;
+  background: rgba(255, 255, 255, 0.364);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#search-bar input {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+#search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.695);
+  font-weight: 400;
+}
+
+#focus-button {
+  background-color: transparent;
+  border: none;
+}
+
+#focus-button i {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.image-gallery {
+  padding: 20px;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 5px;
+}
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 5px;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
 }

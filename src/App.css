@@ -61,11 +61,12 @@
 
 .card {
   overflow: hidden;
+  position: relative;
   border-radius: 5px;
 }
 .image-gallery img {
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
   object-fit: cover;
   border-radius: 5px;
@@ -76,4 +77,23 @@
 
 .image-gallery img:hover {
   transform: scale(1.1);
+}
+
+.card button {
+  font-family: "Montserrat";
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: #ffff;
+  background-color: rgb(0, 128, 0);
+  transition: 0.3s all;
+  font-weight: bold;
+  &:hover {
+    background-color: rgba(0, 128, 0, 0.673);
+  }
 }

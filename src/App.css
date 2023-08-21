@@ -2,9 +2,9 @@
   padding-top: 50px;
   height: auto;
   min-height: 100vh;
-  background: #1f283d;
-  background: -webkit-linear-gradient(to top, #0b0f17, #1f283d);
-  background: linear-gradient(to top, #0b0f17, #1f283d);
+  background: #101010;
+  /* background: -webkit-linear-gradient(to top, #0b0f17, #1f283d);
+  background: linear-gradient(to top, #0b0f17, #1f283d); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   padding: 5px 17px;
-  background: rgba(255, 255, 255, 0.364);
+  background: rgba(255, 255, 255, 0.208);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -52,11 +52,12 @@
 }
 
 .image-gallery {
-  padding: 20px;
+  margin: auto;
   width: 80vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
 .card {
@@ -82,7 +83,7 @@
 .card button {
   font-family: "Montserrat";
   position: absolute;
-  left: 15px;
+  left: 0px;
   bottom: 15px;
   cursor: pointer;
   padding: 6px 10px;
@@ -90,10 +91,113 @@
   outline: none;
   border: none;
   color: #ffff;
-  background-color: rgb(0, 128, 0);
+  background-color: rgba(0, 0, 0, 0.708);
   transition: 0.3s all;
   font-weight: bold;
+  transform: translateX(-100%);
   &:hover {
-    background-color: rgba(0, 128, 0, 0.673);
+    background-color: #000000;
   }
+}
+
+.card:hover button {
+  transform: translateX(15px);
+}
+
+.filters {
+  width: 80vw;
+  margin: 3rem 0rem;
+  display: grid;
+  row-gap: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.filters h2 {
+  text-align: center;
+}
+.filters ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.filters ul li button {
+  padding: 12px 35px;
+  cursor: pointer;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+}
+
+.filters ul li:nth-child(1) button {
+  background-color: red;
+}
+
+.filters ul li:nth-child(2) button {
+  background-color: gold;
+}
+.filters ul li:nth-child(3) button {
+  background-color: rgb(3, 165, 3);
+}
+.filters ul li:nth-child(4) button {
+  background-color: orangered;
+}
+.filters ul li:nth-child(5) button {
+  background-color: blue;
+}
+.filters ul li:nth-child(6) button {
+  background-color: purple;
+}
+.filters ul li:nth-child(7) button {
+  background-color: rgb(19, 19, 19);
+}
+.filters ul li:nth-child(8) button {
+  background-color: white;
+}
+
+.orientation {
+  display: flex;
+  justify-content: center;
+}
+
+.orientation select {
+  background-color: #0b0f17;
+  color: white;
+  padding: 7px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.orientation select option {
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.apply {
+  display: flex;
+  justify-content: center;
+}
+.apply button {
+  border: none;
+  outline: none;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background-color: rgb(3, 186, 3);
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(3, 186, 3, 0.806);
+  }
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
 }

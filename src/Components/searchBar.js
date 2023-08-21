@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "./useFetch";
 import Card from "./card";
+import SelectFilters from "./selectFilters";
 
 const SearchBar = () => {
   const [query, setquery] = useState("");
   const [images, setImages] = useState(null);
   const { fetchData } = useFetch();
 
-  const handleSearch = async () => {
+  const handleSearch = async (color, orient) => {
     if (query == "") {
       alert("Please enter an input");
     } else {
-      const dataArray = await fetchData(query);
+      const dataArray = await fetchData(query, color, orient);
       setImages(dataArray);
-      setquery("");
     }
   };
 
@@ -28,11 +28,23 @@ const SearchBar = () => {
           }}
           placeholder="Search here... "
         />
-        <button id="focus-button" onClick={handleSearch}>
+        <button
+          id="focus-button"
+          onClick={() => {
+            handleSearch("");
+          }}
+        >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
-      <div>{images && <Card images={images} />}</div>
+      <div>
+        {images && (
+          <>
+            <SelectFilters handleSearch={handleSearch} />
+            <Card images={images} />
+          </>
+        )}
+      </div>
     </>
   );
 };
